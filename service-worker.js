@@ -2,13 +2,13 @@ self.addEventListener("install", (e) => {
     e.waitUntil(
         caches.open("control-horas-cache").then((cache) => {
             return cache.addAll([
-                "index.html",
-                "style.css",
-                "app.js",
-                "manifest.json",
-                "icon-192.png",
-                "icon-512.png"
-            ]);
+    "/control-horas/index.html",
+    "/control-horas/style.css",
+    "/control-horas/app.js",
+    "/control-horas/manifest.json",
+    "/control-horas/icon-192.png",
+    "/control-horas/icon-512.png"
+])
         })
     );
 });
