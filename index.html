@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Horas</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+</head>
+<body>
+
+    <h1>Control de Horas</h1>
+
+    <div class="form">
+        <label>Fecha</label>
+        <input type="date" id="fecha">
+
+        <label>Entrada</label>
+        <input type="time" id="entrada">
+
+        <label>Salida</label>
+        <input type="time" id="salida">
+
+        <label>Pausa (minutos)</label>
+        <input type="number" id="pausa" value="0">
+
+        <button onclick="calcular()">Calcular</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script src="app.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+
+</body>
+</html>
