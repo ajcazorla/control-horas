@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Control Horas — Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Acceso</h1>
+    <form id="loginForm">
+      <label>Usuario
+        <input id="username" required pattern="[A-Za-z0-9_-]+" />
+      </label>
+      <label>Contraseña
+        <input id="password" type="password" required minlength="8" />
+      </label>
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="msg" class="muted"></p>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    (async ()=> {
+      await auth_init_default(); // crea usuario inicial si no existe
+      const form = document.getElementById('loginForm');
+      form.addEventListener('submit', async e=>{
+        e.preventDefault();
+        const u = document.getElementById('username').value.trim();
+        const p = document.getElementById('password').value;
+        const ok = await auth_login(u,p);
+        const msg = document.getElementById('msg');
+        if(ok) location.href = 'app.html';
+        else msg.textContent = 'Usuario o contraseña incorrectos';
+      });
+    })();
+  </script>
+</body>
+</html>
