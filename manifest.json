@@ -1,7 +1,7 @@
 {
   "name": "Control de Horas",
   "short_name": "Horas",
-  "start_url": "index.html",
+  "start_url": "/control-horas/index.html"
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
