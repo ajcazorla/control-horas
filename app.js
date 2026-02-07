@@ -82,7 +82,7 @@ function mostrarRegistros() {
             <div class="item">
                 <strong>${r.fecha}</strong><br>
                 ${r.entrada} - ${r.salida} (Pausa: ${r.pausa} min)<br>
-                Horas: ${r.horas}h<br>
+                Horas: ${r.horas} h<br>
                 Importe: ${r.importe} €<br>
                 <button onclick="borrarRegistro(${i})">Borrar</button>
             </div>
